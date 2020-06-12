@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Sign in!</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <div class='container'>
+            <h1>Welcome back!</h1>
+            <h2>Sign in!</h2>
+        </div>
+        
+    </head>
+    <body>
+        <div class='container'>
+            <form action="{{url_for('signin_user')}}" method='post'> 
+                Username
+                <input type="text" name='username' placeholder="Enter your username">
+                <br>
+                password
+                <input type='password' name='password' placeholder='password'>
+                <button>Sign in!</button>
+            </form>
+            {% if boo==False %}
+            <h3 class="alert alert-warning" role="alert" >The username or password is wrong</h3>
+            <a href="{{url_for('form')}}">Sign up!</a>
+            {% endif %}
+        </div>
+        
+    </body>
+    
+</html>

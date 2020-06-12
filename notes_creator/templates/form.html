@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Sign up form</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <div class='container'>
+            <h1>Long's website</h1>
+            <h2>Please fill in the form below</h2>
+        </div>
+        
+    </head>
+    <body>
+        <div class='container'>
+            <form action="{{ url_for('userinfo')}}" method='post'>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">First name:</label>
+                    <input class="form-control" type="text" name='firstname' placeholder="First Name">
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Last name:</label>
+                    <input class="form-control" type='text' name='lastname' placeholder="Last Name">
+                    <br>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Age:</label>
+                    <input class="form-control" type="number" name='age' placeholder="age">
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Username:</label>
+                    <input class="form-control" type="text" name='username' placeholder="username">
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Password:</label>
+                    <input class="form-control" type="password" name='pw1' placeholder='password'>
+                    <br>
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Re-enter your password:</label>
+                    <input class="form-control" type="password" name='pw2' placeholder='Re-enter password'>
+                </div>
+                
+                {% if pw1 != pw2 %}
+                <h3 class="alert alert-warning" role="alert">the password does not match, please re-enter the password</h3>
+                {% else %} 
+                {% endif %}
+                <br>
+                <button type="submit" class="btn btn-primary">Submit!!!</button>
+                <br>
+            </form>   
+                {% if is_register==true %}
+                <h3 class="alert alert-warning" role="alert">Your accound has been register,try to sign in instead</h3>
+                {% else %}
+                {% endif %}
+                <p>if you already have an account:</p>
+                
+            <a href ="{{ url_for('signin') }}">Sign in!</a>
+        </div>
+        
+            
+
+        
+
+    </body>
+
+
+</html>

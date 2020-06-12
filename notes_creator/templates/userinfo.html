@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <title>User info</title>
+        <style>
+            .container{
+                margin: auto;
+                
+            }
+        </style>
+        <h1 class='container'>Welcome {{ cust1.name }} !!!</h1>
+    </head>
+    <body>
+        <div class='container'>
+            <h1> CONGRATULATION!! </h1>
+            <h2> You have complete sign up</h2>
+            <p> you are {{cust1.age}} years old </p>
+        
+        
+            <ul>
+                {% for note in notes %}
+                    <li>{{ note }}</li>
+                {% endfor %}
+            </ul>
+            <form action= "{{ url_for('note', id = cust1.id) }}" method="POST">
+                <input type="text" name="note" placeholder="Write down the note">
+                <button>Add note!</button>
+            </form>
+        </div>
+        
+        
+        
+    </body>
+</html>

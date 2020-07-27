@@ -10,3 +10,5 @@ For windows,
 set FLASK_APP=application.py
 flask run
 
+*** note : this application needs to use local machine database. you need to replace the string inside *** engine=create_engine('postgresql+psycopg2://postgres:Duclong123@localhost:5432/notes') with the url to your database. 
+
